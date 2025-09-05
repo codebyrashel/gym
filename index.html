@@ -4,10 +4,47 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Font awsome -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Vite App</title>
   </head>
   <body>
-    <div id="app"></div>
+     
+    <!-- Navber sections -->
+     <nav>
+       <div class="md:hidden flex justify-baseline items-center mx-5 mt-3">
+          
+        <div class="w-[105px] h-[57px]">
+             <img src="/src/img/Logo.png" alt="" class="object-cover">
+         </div>
+
+         <button class="z-10 absolute right-10   flex md:hidden"><i class="fa-solid fa-bars text-3xl cursor-pointer" id="toggleMenu"></i></button>
+
+       </div>
+         <header class="flex p-7 md:p-3  md:items-center md:justify-between container mx-auto flex-col md:flex-row responsive-Navbar responsive-Navbar.active" id="NavbarMenu">
+             <div class="w-[105px] h-[57px]">
+             <img src="/src/img/Logo.png" alt="" class="object-cover">
+         </div>
+
+         <ul class="flex space-x-8 md:items-center flex-col md:flex-row space-y-5 md:space-y-0">
+          <li class="text-3xl md:text-xl"><a href="#" class="transition-all hover:text-[#6F55F2] hover:underline text-[#6F55F2]">Home</a></li>
+
+          <li class="text-2xl md:text-xl"><a href="#" class="transition-all hover:text-[#6F55F2] hover:underline">Schedule</a></li>
+
+          <li class="text-2xl md:text-xl"><a href="#" class="transition-all hover:text-[#6F55F2] hover:underline">Classes</a></li>
+
+          <li class="text-2xl md:text-xl"><a href="#" class="transition-all hover:text-[#6F55F2] hover:underline">Pricing</a></li>
+         </ul>
+
+         <div class="md:mt-0 mt-6">
+          <button class="bg-[#6F55F2] px-6 py-3 rounded-xl text-white text-xl cursor-pointer hover:bg-blue-800">Register</button>
+
+         </div>
+         </header>
+     </nav>
+
+    
     <script type="module" src="/src/main.js"></script>
+    <script src="src/navbar.js"></script>
   </body>
 </html>

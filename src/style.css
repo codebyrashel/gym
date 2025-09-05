@@ -1,1 +1,19 @@
 @import "tailwindcss";
+
+@media (max-width:768px){
+    .responsive-Navbar{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 60%;
+        background-color: #EDEDED;
+        display: none;
+    }
+
+    .active{
+        display: flex;
+    }
+   
+    
+}
