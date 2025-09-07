@@ -81,26 +81,34 @@
     <!-- hero section  -->
     <section
       id="hero"
-      class="bg-gradient-to-r min-h-screen from-purple-100/30 to-white py-16 px-6 md:px-20 flex flex-col-reverse md:flex-row items-center justify-between">
+      class="py-16 relative px-6 md:px-20 flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto">
+      <!-- bg blob -->
+      <div
+        class="w-220 h-120 bg-violet-100 absolute mx-auto inset-0 z-[-2] top-32 rounded-full blur-3xl opacity-75"></div>
       <!-- Text Content -->
       <div class="md:w-1/2 text-center md:text-left me-2">
-        <h1
-          class="text-4xl font-Inter md:text-5xl font-bold mb-4 text-stone-800">
-          Exercise is the Key to a
-          <div class="relative inline-block">
-            <span class="text-violet-500">
-              Healthy
-              <img src="red__line.svg" class="absolute -bottom-[10px]" />
-            </span>
-          </div>
-          Lifestyle
-        </h1>
+        <div class="relative">
+          <h1
+            class="text-4xl font-Inter z-1 md:text-5xl font-bold mb-4 text-stone-800 relative">
+            Exercise is the Key to a
+            <div class="relative inline-block">
+              <span class="text-violet-500">
+                Healthy
+                <img src="red__line.svg" class="absolute -bottom-[10px]" />
+              </span>
+            </div>
+            Lifestyle
+          </h1>
+          <img
+            src="/ring.svg"
+            class="absolute z-[-1] inset-0 w-120 mx-auto -top-20 " />
+        </div>
         <p class="text-gray-700 mb-6">
           Fitness is often used to describe what your business is all about and
           deliver your message—important to pay attention.
         </p>
         <div
-          class="flex flex-col sm:flex-row gap-4 items-center justify-center md:justify-start">
+          class="flex flex-col relative z-10 sm:flex-row gap-4 items-center justify-center md:justify-start">
           <button
             class="bg-violet-500 cursor-pointer text-white px-6 py-3 rounded-lg transition">
             Get Started
