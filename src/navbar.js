@@ -1,6 +1,17 @@
-const toggleMenu = document.getElementById('toggleMenu');
+// Mobile Navbar Toggle
+document.addEventListener('DOMContentLoaded', () => {
+  const toggleMenu = document.getElementById('toggleMenu');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const closeMenu = document.getElementById('closeMenu');
 
-toggleMenu.addEventListener('click' , function(){
-   const NavbarMenu = document.getElementById('NavbarMenu');
-   NavbarMenu.classList.toggle('active')
-})
+  if (toggleMenu && mobileMenu) {
+    toggleMenu.addEventListener('click', () => {
+      mobileMenu.classList.remove('hidden');
+    });
+  }
+  if (closeMenu && mobileMenu) {
+    closeMenu.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+    });
+  }
+});

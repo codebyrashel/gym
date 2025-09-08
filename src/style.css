@@ -1,27 +1,41 @@
-
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
 
-@theme {
+/* Remove unused @theme block and duplicate @import */
+/* Remove .responsive-Navbar and .active: not used, Tailwind handles nav visibility */
+
+:root {
   --font-Roboto: "Roboto", sans-serif;
   --font-Inter: "Inter", sans-serif;
 }
 
+/* You can add any custom styles below if needed */
 
-@import "tailwindcss";
-
-@media (max-width: 768px) {
-  .responsive-Navbar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 60%;
-    background-color: #ededed;
-    display: none;
+/* Hide all testimonial cards by default on mobile/tablet, show only first 3 */
+@media (max-width: 1023px) {
+  #testimonial-slider {
+    position: relative;
   }
+  #testimonial-slider .testimonial-card {
+    position: absolute;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+  #testimonial-slider .testimonial-card:nth-child(1),
+  #testimonial-slider .testimonial-card:nth-child(2),
+  #testimonial-slider .testimonial-card:nth-child(3) {
+    position: static;
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
 
-  .active {
-    display: flex;
+/* Hide testimonial cards with js-hide on mobile/tablet */
+@media (max-width: 1023px) {
+  #testimonial-slider .js-hide {
+    display: none !important;
   }
 }

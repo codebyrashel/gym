@@ -6,322 +6,196 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Title -->
   <title>Fitness Gym | Premium Workout & Training Plans</title>
-
-  <!-- Description (SEO) -->
   <meta name="description"
     content="Join Fitness Gym for unlimited access to professional trainers, modern equipment, and premium workout plans. Stay motivated and achieve your health goals with our flexible membership options." />
-
-  <!-- Keywords (SEO hint, not critical for modern SEO but okay to include) -->
   <meta name="keywords"
     content="gym, fitness, workout, personal trainer, premium gym, health club, fitness plans, training, exercise" />
-
-  <!-- Author -->
   <meta name="author" content="Fitness Gym Team" />
-
-  <!-- Robots -->
   <meta name="robots" content="index, follow" />
   <meta name="language" content="English" />
-
-  <!-- Canonical -->
   <link rel="canonical" href="https://yourdomain.com/" />
-
-  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <link rel="apple-touch-icon" href="/vite.svg" />
-
-  <!-- Open Graph (for social sharing like Facebook, LinkedIn) -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://yourdomain.com/" />
   <meta property="og:title" content="Fitness Gym | Premium Workout & Training Plans" />
   <meta property="og:description"
     content="Train smarter with Fitness Gym. Get access to modern equipment, expert trainers, and flexible memberships." />
   <meta property="og:image" content="https://yourdomain.com/og-image.jpg" />
-
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:url" content="https://yourdomain.com/" />
   <meta name="twitter:title" content="Fitness Gym | Premium Workout & Training Plans" />
   <meta name="twitter:description"
     content="Join Fitness Gym for unlimited access to trainers, classes, and premium fitness facilities." />
   <meta name="twitter:image" content="https://yourdomain.com/og-image.jpg" />
-
-  <!-- Theme Color -->
   <meta name="theme-color" content="#6D28D9" />
-
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-  <!-- Navber sections -->
-  <nav>
-    <div class="md:hidden flex justify-baseline items-center mx-5 mt-3">
-      <div class="w-[105px] h-[57px]">
-        <img src="/src/img/Logo.png" alt="" class="object-cover" />
+  <!-- Navbar -->
+  <nav class="w-full bg-white shadow-sm fixed top-0 left-0 z-50">
+    <div class="container mx-auto flex items-center justify-between px-4 py-3 md:py-4">
+      <div class="flex items-center">
+        <img src="/src/img/Logo.png" alt="Logo" class="w-[90px] h-[48px] object-cover" />
       </div>
-
-      <button class="z-10 absolute right-10 flex md:hidden">
-        <i class="fa-solid fa-bars text-3xl cursor-pointer" id="toggleMenu"></i>
+      <!-- Hamburger -->
+      <button class="md:hidden flex items-center" id="toggleMenu" aria-label="Open Menu">
+        <i class="fa-solid fa-bars text-2xl"></i>
       </button>
-    </div>
-    <header
-      class="flex p-7 md:p-3 md:items-center md:justify-between container mx-auto flex-col md:flex-row responsive-Navbar responsive-Navbar.active"
-      id="NavbarMenu">
-      <div class="w-[105px] h-[57px]">
-        <img src="/src/img/Logo.png" alt="" class="object-cover" />
-      </div>
-
-      <ul class="flex space-x-8 md:items-center flex-col md:flex-row space-y-5 md:space-y-0">
-        <li class="text-3xl md:text-xl">
-          <a href="#" class="transition-all hover:text-[#6F55F2] hover:underline text-[#6F55F2]">Home</a>
-        </li>
-
-        <li class="text-2xl md:text-xl">
-          <a href="#" class="transition-all hover:text-[#6F55F2] hover:underline">Schedule</a>
-        </li>
-
-        <li class="text-2xl md:text-xl">
-          <a href="#" class="transition-all hover:text-[#6F55F2] hover:underline">Classes</a>
-        </li>
-
-        <li class="text-2xl md:text-xl">
-          <a href="#" class="transition-all hover:text-[#6F55F2] hover:underline">Pricing</a>
-        </li>
+      <!-- Menu -->
+      <ul
+        class="hidden md:flex space-x-6 items-center text-base font-medium"
+        id="NavbarMenu">
+        <li><a href="#" class="text-[#6F55F2] hover:text-[#6F55F2] hover:underline">Home</a></li>
+        <li><a href="#" class="hover:text-[#6F55F2] hover:underline">Schedule</a></li>
+        <li><a href="#" class="hover:text-[#6F55F2] hover:underline">Classes</a></li>
+        <li><a href="#" class="hover:text-[#6F55F2] hover:underline">Pricing</a></li>
       </ul>
-
-      <div class="md:mt-0 mt-6">
-        <button class="bg-[#6F55F2] px-6 py-3 rounded-xl text-white text-xl cursor-pointer hover:bg-blue-800">
+      <div class="hidden md:block">
+        <button class="bg-[#6F55F2] px-5 py-2 rounded-xl text-white text-base hover:bg-blue-800 transition">
           Register
         </button>
       </div>
-    </header>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobileMenu"
+      class="md:hidden fixed top-0 left-0 w-full h-full bg-white bg-opacity-95 z-40 flex flex-col items-center justify-center space-y-8 text-2xl font-semibold hidden">
+      <button class="absolute top-6 right-8 text-3xl" id="closeMenu" aria-label="Close Menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <a href="#" class="text-[#6F55F2] hover:underline">Home</a>
+      <a href="#" class="hover:text-[#6F55F2] hover:underline">Schedule</a>
+      <a href="#" class="hover:text-[#6F55F2] hover:underline">Classes</a>
+      <a href="#" class="hover:text-[#6F55F2] hover:underline">Pricing</a>
+      <button class="bg-[#6F55F2] px-8 py-3 rounded-xl text-white text-xl hover:bg-blue-800 transition">
+        Register
+      </button>
+    </div>
   </nav>
-  <!-- hero section  -->
 
-        <ul
-          class="flex space-x-8 md:items-center flex-col md:flex-row space-y-5 md:space-y-0">
-          <li class="text-3xl md:text-xl">
-            <a
-              href="#"
-              class="transition-all hover:text-[#6F55F2] hover:underline text-[#6F55F2]"
-              >Home</a
-            >
-          </li>
-
-          <li class="text-2xl md:text-xl">
-            <a
-              href="#"
-              class="transition-all hover:text-[#6F55F2] hover:underline"
-              >Schedule</a
-            >
-          </li>
-
-          <li class="text-2xl md:text-xl">
-            <a
-              href="#"
-              class="transition-all hover:text-[#6F55F2] hover:underline"
-              >Classes</a
-            >
-          </li>
-
-          <li class="text-2xl md:text-xl">
-            <a
-              href="#"
-              class="transition-all hover:text-[#6F55F2] hover:underline"
-              >Pricing</a
-            >
-          </li>
-        </ul>
-
-        <div class="md:mt-0 mt-6">
-          <button
-            class="bg-[#6F55F2] px-6 py-3 rounded-xl text-white text-xl cursor-pointer hover:bg-blue-800">
-            Register
-          </button>
-        </div>
-      </header>
-    </nav>
-    <!-- hero section  -->
+  <main class="pt-20">
+    <!-- Hero Section -->
     <section
       id="hero"
-      class="py-16 relative px-6 md:px-20 flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto">
+      class="relative py-12 px-4 md:px-20 flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto min-h-[70vh]">
       <!-- bg blob -->
       <div
-        class="w-220 h-120 bg-violet-100 absolute mx-auto inset-0 z-[-2] top-32 rounded-full blur-3xl opacity-75"></div>
+        class="w-[320px] h-[180px] md:w-[500px] md:h-[300px] bg-violet-100 absolute mx-auto inset-0 z-[-2] top-32 rounded-full blur-3xl opacity-75"></div>
       <!-- Text Content -->
-      <div class="md:w-1/2 text-center md:text-left me-2">
+      <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
         <div class="relative">
-          <h1
-            class="text-4xl font-Inter z-1 md:text-5xl font-bold mb-4 text-stone-800 relative">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-stone-800">
             Exercise is the Key to a
-            <div class="relative inline-block">
-              <span class="text-violet-500">
-                Healthy
-                <img src="red__line.svg" class="absolute -bottom-[10px]" />
-              </span>
-            </div>
+            <span class="relative inline-block text-violet-500">
+              Healthy
+              <img src="red__line.svg" class="absolute left-0 -bottom-2 w-full" />
+            </span>
             Lifestyle
           </h1>
-          <img
-            src="/ring.svg"
-            class="absolute z-[-1] inset-0 w-120 mx-auto -top-20 " />
+          <img src="/ring.svg" class="absolute z-[-1] left-1/2 -translate-x-1/2 w-32 md:w-48 -top-20" />
         </div>
-  <main>
-    <section id="hero"
-      class="bg-gradient-to-r min-h-screen from-purple-100/30 to-white py-16 px-6 md:px-20 flex flex-col-reverse md:flex-row items-center justify-between">
-      <!-- Text Content -->
-      <div class="md:w-1/2 text-center md:text-left me-2">
-        <h1 class="text-4xl font-Inter md:text-5xl font-bold mb-4 text-stone-800">
-          Exercise is the Key to a
-          <div class="relative inline-block">
-            <span class="text-violet-500">
-              Healthy
-              <img src="red__line.svg" class="absolute -bottom-[10px]" />
-            </span>
-          </div>
-          Lifestyle
-        </h1>
-        <p class="text-gray-700 mb-6">
-          Fitness is often used to describe what your business is all about and
-          deliver your message—important to pay attention.
+        <p class="text-gray-700 mb-6 text-base sm:text-lg">
+          Fitness is often used to describe what your business is all about and deliver your message—important to pay attention.
         </p>
-        <div
-          class="flex flex-col relative z-10 sm:flex-row gap-4 items-center justify-center md:justify-start">
-          <button
-            class="bg-violet-500 cursor-pointer text-white px-6 py-3 rounded-lg transition">
         <div class="flex flex-col sm:flex-row gap-4 items-center justify-center md:justify-start">
-          <button class="bg-violet-500 cursor-pointer text-white px-6 py-3 rounded-lg transition">
+          <button class="bg-violet-500 text-white px-6 py-3 rounded-lg transition hover:bg-violet-700">
             Get Started
           </button>
-          <button class="px-6 py-3 flex cursor-pointer justify-center items-center rounded-lg transition">
-            <img src="/logo.svg" class="inline-flex" /> Watch Video
+          <button class="px-6 py-3 flex items-center rounded-lg transition hover:bg-gray-100">
+            <img src="/logo.svg" class="inline-flex w-6 h-6 mr-2" /> Watch Video
           </button>
         </div>
       </div>
-
       <!-- Image & Overlay Elements -->
-      <div class="relative w-full md:w-1/2 flex justify-center mb-10 md:mb-0">
-        <img src="/hero.svg" class="md:max-w-100 lg:max-w-120 xl:max-w-150" />
+      <div class="relative w-full md:w-1/2 flex justify-center">
+        <img src="/hero.svg" class="max-w-[320px] md:max-w-[400px] lg:max-w-[480px]" />
       </div>
     </section>
 
     <!-- Benefits of Exercise Section -->
-    <section class="py-16 bg-gradient-to-b from-white to-gray-50">
-      <div class="max-w-6xl mx-auto px-6 text-center">
-        <!-- Heading -->
-        <h1 class="text-3xl md:text-4xl font-bold text-gray-800">
-          Benifits of
+    <section class="py-12 bg-gradient-to-b from-white to-gray-50">
+      <div class="max-w-6xl mx-auto px-4 text-center">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800">
+          Benefits of
           <span class="relative inline-block">
             Exercise
-            <!-- Curve underline SVG -->
             <img src="/exercise_curve.svg" alt="underline" class="absolute left-0 bottom-[-8px] w-full" />
           </span>
-        </h1>
-
-        <!-- Subheading -->
-        <p class="mt-4 text-gray-500 max-w-2xl mx-auto">
-          These are some great exercise slogans and for you: Exercise your mind
-          and body.
+        </h2>
+        <p class="mt-4 text-gray-500 max-w-2xl mx-auto text-base">
+          These are some great exercise slogans and for you: Exercise your mind and body.
         </p>
-
-        <!-- Cards (moved inside the container) -->
         <div class="flex flex-col md:flex-row gap-8 mt-12 justify-center items-stretch">
           <!-- Card 1 -->
-          <div
-            class="flex-1 p-8 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition text-center">
+          <div class="flex-1 p-8 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition text-center min-w-[220px]">
             <img src="/exercise_life.svg" alt="Healthy Life" class="mx-auto h-16 mb-6" />
             <h3 class="text-lg font-semibold text-gray-800">Healthy Life</h3>
             <p class="mt-3 text-gray-500 text-sm">
-              These are some great exercise and for you Exercise your mind and
-              body great exercise.
+              These are some great exercise and for you Exercise your mind and body great exercise.
             </p>
           </div>
           <!-- Card 2 -->
-          <div
-            class="flex-1 p-8 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition text-center">
+          <div class="flex-1 p-8 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition text-center min-w-[220px]">
             <img src="/exercise_flexibility.svg" alt="Increased Flexibility" class="mx-auto h-16 mb-6" />
-            <h3 class="text-lg font-semibold text-gray-800">
-              Increased Flexibility
-            </h3>
+            <h3 class="text-lg font-semibold text-gray-800">Increased Flexibility</h3>
             <p class="mt-3 text-gray-500 text-sm">
-              These are some great exercise and for you Exercise your mind and
-              body great exercise.
+              These are some great exercise and for you Exercise your mind and body great exercise.
             </p>
           </div>
           <!-- Card 3 -->
-          <div
-            class="flex-1 p-8 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition text-center">
+          <div class="flex-1 p-8 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition text-center min-w-[220px]">
             <img src="/exercise_reducing_blood_pressure.svg" alt="Reducing Blood Pressure" class="mx-auto h-16 mb-6" />
-            <h3 class="text-lg font-semibold text-gray-800">
-              Reducing Blood Pressure
-            </h3>
+            <h3 class="text-lg font-semibold text-gray-800">Reducing Blood Pressure</h3>
             <p class="mt-3 text-gray-500 text-sm">
-              These are some great exercise and for you Exercise your mind and
-              body great exercise.
+              These are some great exercise and for you Exercise your mind and body great exercise.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="relative bg-gradient-to-b from-white to-purple-50 py-20">
-      <div class="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between px-5 sm:px-10">
+    <!-- Female Fitness Section -->
+    <section class="relative bg-gradient-to-b from-white to-purple-50 py-16">
+      <div class="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between px-4 sm:px-8">
         <!-- Left Side Content -->
-        <div class="relative w-full md:w-1/2 flex justify-center items-center mb-10 md:mb-0">
-          <!-- Circle element background -->
+        <div class="relative w-full md:w-1/2 flex justify-center items-center mb-10 md:mb-0 min-w-[220px]">
           <img src="/circle-element.png" alt="circle background"
-            class="absolute w-64 sm:w-80 md:w-[400px] h-64 sm:h-80 md:h-[400px] top-5 md:top-23" />
-
-          <!-- Female Image -->
+            class="absolute w-48 sm:w-64 md:w-[320px] h-48 sm:h-64 md:h-[320px] top-5 md:top-16" />
           <img src="/female.png" alt="female fitness"
-            class="relative z-20 w-48 sm:w-72 md:w-[330px] rounded-b-[100px] sm:rounded-b-[120px] md:rounded-b-[150px]" />
-
-          <!-- Curve behind female -->
-          <img src="/curve-female-line.svg" alt="curve line" class="absolute w-64 sm:w-96 md:w-[450px]" />
-
-          <!-- Left Dot with notification -->
-          <div class="absolute left-5 sm:left-10 top-1/2 transform -translate-y-1/2 flex flex-col items-center">
-            <div
-              class="mt-2 relative bg-purple-400 px-2 sm:px-3 py-1 rounded-md shadow-md transform transition-transform duration-300 hover:scale-110">
-              <span class="text-xs sm:text-sm font-medium flex justify-center">Personal Trainer</span>
+            class="relative z-20 w-36 sm:w-56 md:w-[220px] rounded-b-[80px] sm:rounded-b-[100px] md:rounded-b-[120px]" />
+          <img src="/curve-female-line.svg" alt="curve line" class="absolute w-48 sm:w-72 md:w-[300px]" />
+          <div class="absolute left-2 sm:left-6 top-1/2 transform -translate-y-1/2 flex flex-col items-center">
+            <div class="mt-2 bg-purple-400 px-2 sm:px-3 py-1 rounded-md shadow-md">
+              <span class="text-xs sm:text-sm font-medium">Personal Trainer</span>
             </div>
-            <img src="/dot-for-curve.svg" alt="dot" class="w-4 sm:w-5 h-4 sm:h-5 absolute top-14 sm:top-16" />
+            <img src="/dot-for-curve.svg" alt="dot" class="w-4 sm:w-5 h-4 sm:h-5 absolute top-10 sm:top-12" />
           </div>
-
-          <!-- Right Dot with Musculation -->
-          <div class="absolute right-3 sm:right-6 top-1/5 flex flex-col items-center">
-            <div
-              class="mb-2 relative bg-white px-2 sm:px-3 py-1 rounded-md shadow-md transform transition-transform duration-300 hover:scale-110">
+          <div class="absolute right-2 sm:right-6 top-1/5 flex flex-col items-center">
+            <div class="mb-2 bg-white px-2 sm:px-3 py-1 rounded-md shadow-md">
               <span class="text-xs sm:text-sm font-medium">Musculation</span>
             </div>
             <img src="/dot-for-curve.svg" alt="dot" class="w-4 sm:w-5 h-4 sm:h-5" />
           </div>
-
-          <!-- Top Left Grip Icon -->
-          <div
-            class="absolute -top-1 sm:-top-2 left-5 sm:left-12 transform transition-transform duration-300 hover:scale-110">
-            <img src="/grip.svg" alt="grip" class="w-10 sm:w-12 h-10 sm:h-12" />
+          <div class="absolute -top-1 sm:-top-2 left-5 sm:left-12">
+            <img src="/grip.svg" alt="grip" class="w-8 sm:w-10 h-8 sm:h-10" />
           </div>
         </div>
-
         <!-- Right Side Content -->
         <div class="w-full md:w-1/2 md:pl-10 text-center md:text-left">
-          <h2 class="text-2xl sm:text-3xl md:text-3xl font-bold text-gray-900">
+          <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">
             Ready to Make your <br />
             <span class="relative inline-block">
               Fitness
-              <!-- Curve under Fitness -->
               <img src="/exercise_curve.svg" alt="curve under fitness"
-                class="absolute left-0 -bottom-2 w-24 sm:w-28 md:w-[120px]" />
+                class="absolute left-0 -bottom-2 w-20 sm:w-24 md:w-[90px]" />
             </span>
           </h2>
-          <p class="mt-4 text-gray-600 max-w-md mx-auto md:mx-0">
-            Gym are an essential part of any successful gym. They will help to attract new customers, motivate members,
-            and track their achievements.
+          <p class="mt-4 text-gray-600 max-w-md mx-auto md:mx-0 text-base">
+            Gym are an essential part of any successful gym. They will help to attract new customers, motivate members, and track their achievements.
           </p>
           <button class="mt-6 px-6 py-3 bg-purple-600 text-white rounded-md shadow-md hover:bg-purple-700 transition">
             Learn More
@@ -330,225 +204,210 @@
       </div>
     </section>
 
-
-    <!--Pricing section-->
-    <section class="relative bg-gradient-to-b from-white to-purple-50 py-20">
-      <div class="container mx-auto px-6 lg:px-10">
-        <!-- Background Circles -->
+    <!-- Pricing section -->
+    <section class="relative bg-gradient-to-b from-white to-purple-50 py-16">
+      <div class="container mx-auto px-4">
         <div class="absolute -top-10 -left-20">
-          <img src="/white-circle.svg" alt="circle" class="w-[400px] z--1 opacity-70" />
+          <img src="/white-circle.svg" alt="circle" class="w-[250px] md:w-[400px] z--1 opacity-70" />
         </div>
         <div class="absolute -top-20 -left-40">
-          <img src="/white-circle.svg" alt="circle" class="w-[500px] opacity-40" />
+          <img src="/white-circle.svg" alt="circle" class="w-[300px] md:w-[500px] opacity-40" />
         </div>
-
-        <!-- Section Heading -->
-        <div class="text-center relative z-10 mb-16">
-          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 inline-block relative">
+        <div class="text-center relative z-10 mb-12">
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 inline-block relative">
             Gym <span class="relative">
               Pricing Plan
-              <img src="/exercise_curve.svg" alt="curve" class="absolute -bottom-2 w-[84px] h-[10px]" />
+              <img src="/exercise_curve.svg" alt="curve" class="absolute -bottom-2 w-[70px] md:w-[84px] h-[10px]" />
             </span>
           </h2>
-          <p class="text-gray-500 mt-4 max-w-2xl mx-auto">
+          <p class="text-gray-500 mt-4 max-w-2xl mx-auto text-base">
             They will help to attract new customers members motivated <br class="hidden sm:block" />
             and track achieve their goals.
           </p>
         </div>
-
-        <!-- Pricing Cards -->
-        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto relative z-10 px-6">
-
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto relative z-10 px-2">
           <!-- Regular Member -->
-          <div
-            class="bg-white shadow-lg rounded-xl flex flex-col transition duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
-            <!-- Top Section -->
+          <div class="bg-white shadow-lg rounded-xl flex flex-col transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
             <div class="p-8 text-center">
-              <h3 class="text-xl font-semibold text-gray-800">Regular Member</h3>
+              <h3 class="text-lg font-semibold text-gray-800">Regular Member</h3>
               <div class="mt-4">
-                <p class="text-4xl font-bold text-gray-900">$50
-                  <span class="text-lg font-normal text-gray-500">/month</span>
+                <p class="text-3xl font-bold text-gray-900">$50
+                  <span class="text-base font-normal text-gray-500">/month</span>
                 </p>
               </div>
             </div>
-            <!-- Divider -->
             <div class="border-t border-gray-200"></div>
-            <!-- Features -->
-            <ul class="flex-1 p-8 space-y-4 text-gray-600">
-              <li class="flex items-center"><span class="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>Unlimited access
-                to the gym</li>
-              <li class="flex items-center"><span class="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>Customer support
-              </li>
-              <li class="flex items-center"><span class="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>Personal trainer
-              </li>
-              <li class="flex items-center"><span class="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>Standard options
-              </li>
-              <li class="flex items-center"><span class="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>5 Class per week
-              </li>
+            <ul class="flex-1 p-8 space-y-4 text-gray-600 text-sm">
+              <li class="flex items-center"><span class="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>Unlimited access to the gym</li>
+              <li class="flex items-center"><span class="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>Customer support</li>
+              <li class="flex items-center"><span class="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>Personal trainer</li>
+              <li class="flex items-center"><span class="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>Standard options</li>
+              <li class="flex items-center"><span class="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>5 Class per week</li>
             </ul>
-            <!-- Button -->
             <div class="px-8 pb-8 text-center">
-              <button
-                class="w-full bg-purple-500 text-white py-3 rounded-md hover:bg-purple-600 transition duration-300">
+              <button class="w-full bg-purple-500 text-white py-3 rounded-md hover:bg-purple-600 transition duration-300">
                 Join Now
               </button>
             </div>
           </div>
-
           <!-- Premium Member -->
-          <div
-            class="bg-white shadow-xl rounded-xl flex flex-col transform scale-105 transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
-            <!-- Top Section (Purple) -->
+          <div class="bg-white shadow-xl rounded-xl flex flex-col transform scale-105 transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
             <div class="p-8 text-center bg-purple-600 rounded-t-xl">
-              <h3 class="text-xl font-semibold text-white">Premium Member</h3>
+              <h3 class="text-lg font-semibold text-white">Premium Member</h3>
               <div class="mt-4">
-                <p class="text-4xl font-bold text-white">$50
-                  <span class="text-lg font-normal text-purple-200">/month</span>
+                <p class="text-3xl font-bold text-white">$50
+                  <span class="text-base font-normal text-purple-200">/month</span>
                 </p>
               </div>
             </div>
-            <!-- Divider -->
             <div class="border-t border-gray-200"></div>
-            <!-- Features -->
-            <ul class="flex-1 p-8 space-y-4 text-gray-600">
-              <li class="flex items-center"><span class="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>Unlimited access
-                to the gym</li>
-              <li class="flex items-center"><span class="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>Customer support
-              </li>
-              <li class="flex items-center"><span class="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>Personal trainer
-              </li>
-              <li class="flex items-center"><span class="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>Standard options
-              </li>
-              <li class="flex items-center"><span class="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>5 Class per week
-              </li>
+            <ul class="flex-1 p-8 space-y-4 text-gray-600 text-sm">
+              <li class="flex items-center"><span class="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>Unlimited access to the gym</li>
+              <li class="flex items-center"><span class="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>Customer support</li>
+              <li class="flex items-center"><span class="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>Personal trainer</li>
+              <li class="flex items-center"><span class="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>Standard options</li>
+              <li class="flex items-center"><span class="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>5 Class per week</li>
             </ul>
-            <!-- Button -->
             <div class="px-8 pb-8 text-center">
-              <button
-                class="w-full bg-purple-600 text-white py-3 rounded-md hover:bg-purple-700 transition duration-300">
+              <button class="w-full bg-purple-600 text-white py-3 rounded-md hover:bg-purple-700 transition duration-300">
                 Join Now
               </button>
             </div>
           </div>
-
           <!-- Standard Member -->
-          <div
-            class="bg-white shadow-lg rounded-xl flex flex-col transition duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
-            <!-- Top Section -->
+          <div class="bg-white shadow-lg rounded-xl flex flex-col transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
             <div class="p-8 text-center">
-              <h3 class="text-xl font-semibold text-gray-800">Standard Member</h3>
+              <h3 class="text-lg font-semibold text-gray-800">Standard Member</h3>
               <div class="mt-4">
-                <p class="text-4xl font-bold text-gray-900">$50
-                  <span class="text-lg font-normal text-gray-500">/month</span>
+                <p class="text-3xl font-bold text-gray-900">$50
+                  <span class="text-base font-normal text-gray-500">/month</span>
                 </p>
               </div>
             </div>
-            <!-- Divider -->
             <div class="border-t border-gray-200"></div>
-            <!-- Features -->
-            <ul class="flex-1 p-8 space-y-4 text-gray-600">
-              <li class="flex items-center"><span class="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>Unlimited access
-                to the gym</li>
-              <li class="flex items-center"><span class="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>Customer support
-              </li>
-              <li class="flex items-center"><span class="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>Personal trainer
-              </li>
-              <li class="flex items-center"><span class="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>Standard options
-              </li>
-              <li class="flex items-center"><span class="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>5 Class per week
-              </li>
+            <ul class="flex-1 p-8 space-y-4 text-gray-600 text-sm">
+              <li class="flex items-center"><span class="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>Unlimited access to the gym</li>
+              <li class="flex items-center"><span class="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>Customer support</li>
+              <li class="flex items-center"><span class="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>Personal trainer</li>
+              <li class="flex items-center"><span class="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>Standard options</li>
+              <li class="flex items-center"><span class="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>5 Class per week</li>
             </ul>
-            <!-- Button -->
             <div class="px-8 pb-8 text-center">
-              <button
-                class="w-full bg-purple-500 text-white py-3 rounded-md hover:bg-purple-600 transition duration-300">
+              <button class="w-full bg-purple-500 text-white py-3 rounded-md hover:bg-purple-600 transition duration-300">
                 Join Now
               </button>
             </div>
           </div>
         </div>
+      </div>
     </section>
 
-    <section class="relative bg-white py-16">
-      <div class="max-w-7xl mx-auto px-6">
-        <!-- Heading -->
-        <div class="mb-12">
-          <h2 class="text-3xl font-bold text-left">Testimonials</h2>
-          <img src="exercise_curve.svg" alt="underline" class="mt-2 w-45">
+    <!-- Testimonials -->
+    <section class="relative bg-white py-12">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="mb-10">
+          <h2 class="text-2xl sm:text-3xl font-bold text-left">Testimonials</h2>
+          <img src="exercise_curve.svg" alt="underline" class="mt-2 w-32">
         </div>
-
-        <!-- Slider Wrapper -->
-        <div id="testimonial-slider" class="flex items-end justify-center gap-6 transition-transform duration-500">
-
+        <div id="testimonial-slider" class="flex flex-col md:flex-row items-end justify-center gap-6 transition-transform duration-500">
           <!-- Card 1 -->
-          <div class="testimonial-card bg-white rounded-lg shadow-md w-[360px] relative transition-all duration-500">
-            <div class="w-[360px] h-[276px] bg-gray-200 flex items-center justify-start">
-              <img src="https://via.placeholder.com/150" alt="Person" class="h-[200px] object-contain" />
+          <div class="testimonial-card bg-white rounded-lg shadow-md w-full md:w-[320px] relative transition-all duration-500">
+            <div class="w-full h-[180px] bg-gray-200 flex items-center justify-start">
+              <img src="https://via.placeholder.com/150" alt="Person" class="h-[120px] object-contain" />
             </div>
             <div class="p-4 text-left">
               <h3 class="font-semibold">Skylar Schleifer</h3>
               <p class="text-gray-600 text-sm mt-2">
-                The fitness boot camp slogans we have share unique and catchy. Here is how to write a social media easy
-                to drive leads.
+                The fitness boot camp slogans we have share unique and catchy. Here is how to write a social media easy to drive leads.
               </p>
             </div>
             <span class="absolute bottom-3 right-3 bg-purple-600 text-white p-2 rounded">"</span>
           </div>
-
           <!-- Card 2 (Middle, raised) -->
-          <div
-            class="testimonial-card bg-white rounded-lg shadow-lg w-[360px] relative transition-all duration-500 transform -translate-y-6">
-            <div class="w-[360px] h-[276px] bg-gray-200 flex items-center justify-start">
-              <img src="https://via.placeholder.com/150" alt="Person" class="h-[200px] object-contain" />
+          <div class="testimonial-card bg-white rounded-lg shadow-lg w-full md:w-[320px] relative transition-all duration-500 transform md:-translate-y-6">
+            <div class="w-full h-[180px] bg-gray-200 flex items-center justify-start">
+              <img src="https://via.placeholder.com/150" alt="Person" class="h-[120px] object-contain" />
             </div>
             <div class="p-4 text-left">
               <h3 class="font-semibold">Skylar Schleifer</h3>
               <p class="text-gray-600 text-sm mt-2">
-                They will help to attract new motivated and track achieve. This testimonial is highlighted in the middle
-                with extra detail text filling the space above.
+                They will help to attract new motivated and track achieve. This testimonial is highlighted in the middle with extra detail text filling the space above.
               </p>
             </div>
             <span class="absolute bottom-3 right-3 bg-purple-600 text-white p-2 rounded">"</span>
           </div>
-
           <!-- Card 3 -->
-          <div class="testimonial-card bg-white rounded-lg shadow-md w-[360px] relative transition-all duration-500">
-            <div class="w-[360px] h-[276px] bg-gray-200 flex items-center justify-start">
-              <img src="https://via.placeholder.com/150" alt="Person" class="h-[200px] object-contain" />
+          <div class="testimonial-card bg-white rounded-lg shadow-md w-full md:w-[320px] relative transition-all duration-500">
+            <div class="w-full h-[180px] bg-gray-200 flex items-center justify-start">
+              <img src="https://via.placeholder.com/150" alt="Person" class="h-[120px] object-contain" />
             </div>
             <div class="p-4 text-left">
               <h3 class="font-semibold">Skylar Schleifer</h3>
               <p class="text-gray-600 text-sm mt-2">
-                The fitness boot camp slogans we have share unique and catchy. Here is how to write a social media easy
-                to drive leads.
+                The fitness boot camp slogans we have share unique and catchy. Here is how to write a social media easy to drive leads.
+              </p>
+            </div>
+            <span class="absolute bottom-3 right-3 bg-purple-600 text-white p-2 rounded">"</span>
+          </div>
+          <!-- Card 4 -->
+          <div class="testimonial-card js-hide bg-white rounded-lg shadow-md w-full md:w-[320px] relative transition-all duration-500">
+            <div class="w-full h-[180px] bg-gray-200 flex items-center justify-start">
+              <img src="https://via.placeholder.com/150" alt="Person" class="h-[120px] object-contain" />
+            </div>
+            <div class="p-4 text-left">
+              <h3 class="font-semibold">Jordan Lee</h3>
+              <p class="text-gray-600 text-sm mt-2">
+                Amazing trainers and a motivating environment. I achieved my fitness goals faster than I expected!
+              </p>
+            </div>
+            <span class="absolute bottom-3 right-3 bg-purple-600 text-white p-2 rounded">"</span>
+          </div>
+          <!-- Card 5 -->
+          <div class="testimonial-card js-hide bg-white rounded-lg shadow-md w-full md:w-[320px] relative transition-all duration-500">
+            <div class="w-full h-[180px] bg-gray-200 flex items-center justify-start">
+              <img src="https://via.placeholder.com/150" alt="Person" class="h-[120px] object-contain" />
+            </div>
+            <div class="p-4 text-left">
+              <h3 class="font-semibold">Priya Sharma</h3>
+              <p class="text-gray-600 text-sm mt-2">
+                The classes are fun and challenging. The staff is always friendly and helpful. Highly recommended!
+              </p>
+            </div>
+            <span class="absolute bottom-3 right-3 bg-purple-600 text-white p-2 rounded">"</span>
+          </div>
+          <!-- Card 6 -->
+          <div class="testimonial-card js-hide bg-white rounded-lg shadow-md w-full md:w-[320px] relative transition-all duration-500">
+            <div class="w-full h-[180px] bg-gray-200 flex items-center justify-start">
+              <img src="https://via.placeholder.com/150" alt="Person" class="h-[120px] object-contain" />
+            </div>
+            <div class="p-4 text-left">
+              <h3 class="font-semibold">Lucas Martins</h3>
+              <p class="text-gray-600 text-sm mt-2">
+                Great equipment and flexible hours. I love the positive vibe and the results I’m seeing!
               </p>
             </div>
             <span class="absolute bottom-3 right-3 bg-purple-600 text-white p-2 rounded">"</span>
           </div>
         </div>
-
         <!-- Navigation Dots -->
         <div id="dots" class="flex justify-center gap-3 mt-6">
           <span class="w-6 h-2 rounded-full bg-purple-600 cursor-pointer"></span>
           <span class="w-6 h-2 rounded-full bg-gray-400 cursor-pointer"></span>
-          <span class="w-6 h-2 rounded-full bg-gray-400 cursor-pointer"></span>
         </div>
       </div>
     </section>
-
   </main>
+
   <!-- Footer -->
   <footer class="bg-gradient-to-b from-white to-purple-50 pt-10">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-10">
-
+    <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-10">
       <!-- Brand -->
       <div>
-        <h2 class="text-4xl font-bold text-purple-600">GYM</h2>
+        <h2 class="text-3xl font-bold text-purple-600">GYM</h2>
         <p class="mt-3 text-sm text-gray-500">
           Fitness are often used to describe what your business all about and deliver your as well.
         </p>
       </div>
-
       <!-- Company -->
       <div>
         <h3 class="font-semibold text-gray-800">Company</h3>
@@ -558,7 +417,6 @@
           <li><a href="#" class="hover:text-purple-600 transition">Careers</a></li>
         </ul>
       </div>
-
       <!-- Links -->
       <div>
         <h3 class="font-semibold text-gray-800">Links</h3>
@@ -569,7 +427,6 @@
           <li><a href="#" class="hover:text-purple-600 transition">Join Us</a></li>
         </ul>
       </div>
-
       <!-- Contact -->
       <div>
         <h3 class="font-semibold text-gray-800">Contact</h3>
@@ -580,30 +437,23 @@
             ➤
           </button>
         </div>
-
         <!-- Social Links -->
         <div class="flex space-x-4 mt-5">
-          <a href="#"
-            class="w-9 h-9 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:bg-purple-600 hover:text-white transition">
+          <a href="#" class="w-9 h-9 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:bg-purple-600 hover:text-white transition">
             <i class="fab fa-twitter"></i>
           </a>
-          <a href="#"
-            class="w-9 h-9 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:bg-purple-600 hover:text-white transition">
+          <a href="#" class="w-9 h-9 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:bg-purple-600 hover:text-white transition">
             <i class="fab fa-facebook-f"></i>
           </a>
-          <a href="#"
-            class="w-9 h-9 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:bg-purple-600 hover:text-white transition">
+          <a href="#" class="w-9 h-9 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:bg-purple-600 hover:text-white transition">
             <i class="fab fa-instagram"></i>
           </a>
-          <a href="#"
-            class="w-9 h-9 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:bg-purple-600 hover:text-white transition">
+          <a href="#" class="w-9 h-9 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:bg-purple-600 hover:text-white transition">
             <i class="fab fa-linkedin-in"></i>
           </a>
         </div>
       </div>
     </div>
-
-    <!-- Bottom -->
     <div class="border-t border-gray-200 mt-10 py-5 text-center text-sm text-gray-500">
       Copyright © 2025 GYM. All rights reserved. Present by <span class="text-purple-600">Outlander's</span>
     </div>
@@ -612,6 +462,17 @@
   <script type="module" src="/src/main.js"></script>
   <script src="src/navbar.js"></script>
   <script src="src/testimony.js"></script>
+  <script>
+    // Simple mobile menu toggle
+    const toggleMenu = document.getElementById('toggleMenu');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const closeMenu = document.getElementById('closeMenu');
+    toggleMenu && toggleMenu.addEventListener('click', () => {
+      mobileMenu.classList.remove('hidden');
+    });
+    closeMenu && closeMenu.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+    });
+  </script>
 </body>
-
 </html>
